@@ -10,7 +10,7 @@ authors = ["Niclas Klugmann <niclas@klugmann.de>", "Fabian Scharf scharfling@gma
 
 [[bin]]
 name = "esp_fw"
-path = "./src/bin/main.rs"
+path = "./src/main.rs"
 
 [dependencies]
 esp-bootloader-esp-idf = { version = "0.2.0", features = ["esp32c3"] }
