@@ -3,6 +3,10 @@ edition      = "2021"
 name         = "esp_fw"
 rust-version = "1.86"
 version      = "0.1.0"
+publish = false
+license = "MIT"
+description = "ESP32-Anschluss über 5-Pol-DIN-Buchse an Swissphone LGRA Expert Funkmeldeempfänger-Ladegerät"
+authors = ["Niclas Klugmann <niclas@klugmann.de>", "Fabian Scharf scharfling@gmail.com"]
 
 [[bin]]
 name = "esp_fw"
