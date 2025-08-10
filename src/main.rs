@@ -1,3 +1,5 @@
+//! # Anleitung für Ladegerät:
+//!  https://www.funkhandel.com/mediafiles/Sonstiges/Bedienungsanleitung/bda-lgra.pdf
 #![no_std]
 #![no_main]
 #![deny(
@@ -20,8 +22,6 @@ use log::info;
 fn panic(_: &core::panic::PanicInfo) -> ! {
     loop {}
 }
-
-// https://www.funkhandel.com/mediafiles/Sonstiges/Bedienungsanleitung/bda-lgra.pdf
 
 esp_bootloader_esp_idf::esp_app_desc!();
 
