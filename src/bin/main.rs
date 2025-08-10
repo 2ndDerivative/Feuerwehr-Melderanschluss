@@ -55,11 +55,9 @@ fn main() -> ! {
                 let timer_wake = TimerWakeupSource::new(COOLDOWN);
                 rtc.sleep_light(&[&timer_wake as &dyn WakeSource]);
                 info!("Rearming!");
-                IO_RELAIS_ORIGIN
-                    .borrow_ref_mut(cs)
-                    .as_mut()
-                    .unwrap()
-                    .listen(Event::FallingEdge);
+                if let Some(pin) = IO_RELAIS_ORIGIN.borrow_ref_mut(cs).as_mut() {
+                    pin.listen(Event::FallingEdge)
+                };
             } else {
                 drop(alarm);
                 rtc.sleep_light(&[]);
