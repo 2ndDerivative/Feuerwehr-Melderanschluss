@@ -5,7 +5,7 @@ rust-version = "1.86"
 version      = "0.1.0"
 publish = false
 license = "MIT"
-license_file = "LICENSE"
+license-file = "LICENSE"
 description = "ESP32-Anschluss über 5-Pol-DIN-Buchse an Swissphone LGRA Expert Funkmeldeempfänger-Ladegerät"
 authors = ["Niclas Klugmann <niclas@klugmann.de>", "Fabian Scharf scharfling@gmail.com"]
 
