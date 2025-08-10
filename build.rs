@@ -43,8 +43,15 @@ fn linker_be_nice() {
         std::process::exit(0);
     }
 
+    let target = std::env::var("TARGET").expect("TARGET environment variable not set");
+    let extra_args = match target.as_str() {
+        "xtensa-esp32-none-elf" => "-Wl,",
+        "riscv32imc-unknown-none-elf" => "",
+        _ => panic!("Unknown compile target"),
+    };
     println!(
-        "cargo:rustc-link-arg=--error-handling-script={}",
+        "cargo:rustc-link-arg={}--error-handling-script={}",
+        extra_args,
         std::env::current_exe().unwrap().display()
     );
 }

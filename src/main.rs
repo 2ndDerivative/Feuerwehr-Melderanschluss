@@ -36,7 +36,10 @@ fn main() -> ! {
     let mut io = Io::new(peripherals.IO_MUX);
     io.set_interrupt_handler(interrupt_handler);
 
+    #[cfg(feature = "esp32c3")]
     let pull_pin = peripherals.GPIO7;
+    #[cfg(feature = "esp32")]
+    let pull_pin = peripherals.GPIO1;
     let mut relais_pin = Input::new(pull_pin, InputConfig::default().with_pull(Pull::Up));
     critical_section::with(|cs| {
         relais_pin.listen(Event::FallingEdge);
